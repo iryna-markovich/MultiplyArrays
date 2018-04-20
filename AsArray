@@ -14,21 +14,17 @@ function multiply(a, b){
 
 
 function doOperation(v1, v2, type){
-
-    switch(type){
-        case '*': 
-        return multiply(v1, v2);
-        case '/':    
-        return divide(v1, v2);
-        case '+':
-        return summarize(v1, v2);
-        case '-':
-        return substract(v1, v2);
+    let acArray = {
+    "multiply":multiply,
+    "divide":divide,
+    "summarize":summarize,
+    "substract":substract
     }
+    return acArray[type](v1, v2);
    }
 
 
-function switchArray(arr1, arr2, typeOp){
+function makeMultipliedArray(arr1, arr2, typeOp){
     let newArray = [];
         for (i=0; i<arr1.length; i++){
         let result = doOperation(arr1[i], arr2[i], typeOp);
@@ -38,4 +34,4 @@ function switchArray(arr1, arr2, typeOp){
 
 }
 
-switchArray([3, 5], [4,1], "*");
+makeMultipliedArray([3, 5], [4,1], "multiply");
