@@ -11,7 +11,6 @@ function substract(x, y) {
     return x-y;
 }
 
-
 for ("*" in doFuncByType) multiply(array1[i], array2[i]);
 for ("/" in doFuncByType) divide(array1[i], array2[i]);
 for ("+" in doFuncByType) summarise(array1[i], array2[i]);
